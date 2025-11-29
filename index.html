@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APK Extractor (WebADB)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .status-text {
+            font-weight: bold;
+        }
+
+        .status-connected {
+            color: green;
+        }
+
+        .status-disconnected {
+            color: red;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .app-list {
+            list-style: none;
+            padding: 0;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .app-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .app-item:last-child {
+            border-bottom: none;
+        }
+
+        .app-name {
+            font-weight: 500;
+        }
+
+        .loading {
+            text-align: center;
+            display: none;
+            margin: 1rem 0;
+        }
+
+        .error-msg {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>APK Extractor (Web)</h1>
+
+        <div class="status-bar">
+            <span id="statusText" class="status-text status-disconnected">Disconnected</span>
+            <button id="connectBtn">Connect Device</button>
+        </div>
+
+        <div id="errorMsg" class="error-msg"></div>
+
+        <div id="appSection" style="display: none;">
+            <input type="text" id="searchBox" class="search-box" placeholder="Search apps..." disabled>
+            <button id="refreshBtn">Refresh App List</button>
+
+            <div id="loading" class="loading">Loading apps... (This may take a few seconds)</div>
+
+            <ul id="appList" class="app-list">
+                <!-- Apps will be populated here -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Import App Logic as Module -->
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
