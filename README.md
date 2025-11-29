@@ -12,7 +12,12 @@ A modern, 100% client-side web application to extract APKs from Android devices 
 
 ## Prerequisites
 *   **Browser**: Google Chrome, Microsoft Edge, or Opera (WebUSB support required).
-*   **Android Device**: USB Debugging enabled.
+*   **Android Device** with **USB Debugging enabled**:
+    1. Go to **Settings** → **About Phone**
+    2. Tap **Build Number** 7 times to enable Developer Options
+    3. Go to **Settings** → **Developer Options**
+    4. Enable **USB Debugging**
+    5. Connect device via USB cable
 
 ## How to Run
 1.  Start a local server (WebUSB requires localhost or HTTPS):
