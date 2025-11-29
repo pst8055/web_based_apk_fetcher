@@ -2,7 +2,7 @@
 
 A modern, 100% client-side web application to extract APKs from Android devices directly in your browser.
 
-![How it works](../instructions.png)
+![How it works](instructions.png)
 
 ## Features
 *   **100% Client-Side**: Runs entirely in your browser (Chrome/Edge). No Python or Docker needed.
